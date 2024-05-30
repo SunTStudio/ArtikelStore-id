@@ -45,17 +45,21 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(request $request, $id)
     {
-        //
+        $data = Post::find($id);
+        return view('edit',compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request)
     {
-        //
+        $data = $request->all();
+        $edit = Post::find( $request->artikel_id);
+        $edit->update($data);
+        return redirect()->route('artikel.show');
     }
 
     /**
