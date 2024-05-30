@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -14,6 +15,12 @@ class PostController extends Controller
     {
         $data = Post::all();
         return view('artikel',compact('data'));
+    }
+
+    public function artikel()
+    {
+        $data = Post::all();
+        return view('artikelcard',compact('data'));
     }
 
     /**
@@ -48,7 +55,8 @@ class PostController extends Controller
     public function edit(request $request, $id)
     {
         $data = Post::find($id);
-        return view('edit',compact('data'));
+        $kategori = Tag::all();
+        return view('edit',compact('data','kategori'));
     }
 
     /**

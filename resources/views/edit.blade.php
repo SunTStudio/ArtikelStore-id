@@ -16,6 +16,14 @@
                                         class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                                 </div>
                                 <div>
+                                    <select class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" aria-label="Default select example" name="tag_id">
+                                        <option selected class="font-bold text-gray-700" value="{{ $data->tag->id }}">{{ $data->tag->name_tag}}</option>
+                                    @foreach ($kategori as $item )
+                                        <option value="{{ $item->id }}">{{ $item->name_tag }}</option>
+                                    @endforeach
+                                    </select>
+                                </div>
+                                <div>
                                     <label for="article-description" class="block text-xl font-bold  text-gray-700">Deskripsi Artikel</label>
                                     <textarea id="article-description" name="deskripsi" rows="3" required
                                             class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">{{ $data->deskripsi }}</textarea>
@@ -27,7 +35,7 @@
                                     </button>
                                 </div>
                             </form>
-                        </div>
+                        </div> 
                     </div>
                 </div>
             </div>

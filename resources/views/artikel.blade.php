@@ -10,19 +10,19 @@
                             <table class="min-w-full divide-y divide-green-800 border border-green-800">
                                 <thead>
                                     <tr class="bg-green-500">
-                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider border-b border-green-600">
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-900 uppercase tracking-wider border-b border-green-600">
                                             ID
                                         </th>
-                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider border-b border-green-600">
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-900 uppercase tracking-wider border-b border-green-600">
                                             Nama Artikel
                                         </th>
-                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider border-b border-green-600">
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-900 uppercase tracking-wider border-b border-green-600">
                                             Deskripsi Artikel
                                         </th>
-                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider border-b border-green-600">
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-900 uppercase tracking-wider border-b border-green-600">
                                             Kategori
                                         </th>
-                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-900 uppercase tracking-wider border-b border-green-600">
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-bold text-gray-900 uppercase tracking-wider border-b border-green-600">
                                             Option
                                         </th>
                                     </tr>
@@ -43,7 +43,7 @@
                                             <div class="text-sm text-gray-900">{{ $item->tag->name_tag }}</div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap border-b border-green-600">
-                                            <div class="text-sm text-gray-900"><a href="{{ route('artikel.edit',$item->artikel_id) }}">Edit</a> | <form action="{{ route('artikel.destroy', $item->artikel_id) }}" method="POST" style="display: inline;">  @csrf    @method('DELETE') <button type="submit">Hapus</button> </form></div>
+                                            <div class="text-sm text-gray-900"><a href="{{ route('artikel.edit',$item->artikel_id) }}">Edit</a> | <form action="{{ route('artikel.destroy', $item->artikel_id) }}" method="POST" style="display: inline;">  @csrf    @method('DELETE') <button type="submit">Hapus</button> </form> | <a href="{{ route('artikel.edit',$item->artikel_id) }}">Tampilkan</a></div>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -53,7 +53,7 @@
                     </div>
                     </div>
                     <div class="flex justify-center items-center  p-4">
-                        <a href="{{ route('dashboard') }}" class="inline-block bg-gray-400 hover:bg-gray-500 text-black font-bold py-2 px-4 rounded">
+                        <a href="{{ route('dashboard') }}" class="inline-block bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded">
                             Isikan Data Artikel Baru
                         </a>
                     </div>

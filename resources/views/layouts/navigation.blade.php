@@ -16,6 +16,9 @@
                             {{ __('Dashboard') }}
                         </x-nav-link>
                         <x-nav-link :href="route('artikel.show')">
+                            {{ __('Rangkuman') }}
+                        </x-nav-link>
+                        <x-nav-link :href="route('artikel.card')">
                             {{ __('Artikel') }}
                         </x-nav-link>
                     </div>

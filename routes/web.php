@@ -20,10 +20,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/proses-input', [PostController::class, 'store'])->name('artikel.input');
-    Route::get('/artikel', [PostController::class, 'index'])->name('artikel.show');
+    Route::get('/rangkuman', [PostController::class, 'index'])->name('artikel.show');
     Route::get('/edit/{id}', [PostController::class, 'edit'])->name('artikel.edit');
     Route::get('/update', [PostController::class, 'update'])->name('artikel.update');
-    Route::delete('/artikel/{id}', [PostController::class, 'destroy'])->name('artikel.destroy');
+    Route::delete('/rangkuman/{id}', [PostController::class, 'destroy'])->name('artikel.destroy');
 });
-
+    Route::get('/artikel', [PostController::class, 'artikel'])->name('artikel.card');
 require __DIR__.'/auth.php';
